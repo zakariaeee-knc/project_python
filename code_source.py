@@ -46,7 +46,14 @@ for user,info in similar_user1.items():
     print(f"    Both liked: {', '.join(info['common_posts'])}")
 
 
+<<<<<<< HEAD
 fhasdgjdffh
+=======
+    zakariae
+
+
+
+>>>>>>> f3c8d602a88e30b96e5a248a90e89a15f4a64b22
 
 
 
