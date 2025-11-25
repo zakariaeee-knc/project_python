@@ -1,4 +1,5 @@
 import mysql.connector
+import pandas as pd
 
 db = mysql.connector.connect(
     host="localhost",
@@ -29,6 +30,30 @@ interaction = {
 for u in users:
     cursor.execute("INSERT IGNORE INTO users(username) VALUES (%s)", (u,))
 db.commit()
+
+for p in posts:
+    cursor.execute("INSERT IGNORE INTO posts(post_name) VALUES (%s)", (p,))
+db.commit()
+
+
+cursor.execute("SELECT user_id, username FROM users")
+user_ids = {name: id for id, name in cursor.fetchall()}
+
+cursor.execute("SELECT post_id, post_name FROM posts")
+post_ids = {name: id for id, name in cursor.fetchall()}
+
+# Insert interactions
+for user, post_list in interaction.items():
+    for post in post_list:
+        cursor.execute(
+            "INSERT IGNORE INTO interactions(user_id, post_id) VALUES (%s, %s)",
+            (user_ids[user], post_ids[post])
+        )
+
+db.commit()
+db.close()
+
+print("Data inserted successfully!")
 
 print("📊The availbale users :")
 for user in users:
