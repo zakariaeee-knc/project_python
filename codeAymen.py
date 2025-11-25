@@ -2,7 +2,7 @@ print("-"*30 + "STEP 1 :creating data" + "-"*30)
 
 users = ["user1","user2","user3","user4","user5","user6","user7"]
 posts = ["post1","post2","post3","post4","post5","post6","post7","post8","post9"]
-interaction = {
+interactions = {
     "user1" : ["post1","post3","post9","post6"],
     "user2" : ["post4","post2","post9","post8"],
     "user3" : ["post5","post7","post8","post6"],
@@ -25,15 +25,15 @@ for post in posts:
    print(f"-{post}")
 print("💝the intaraction : ")
 
-for x,y in interaction.items():
+for x,y in interactions.items():
     print(f"{x} . liked : {' ,'.join(y)}")
 
 print("-"*30 + "STEP 2 :finding similar users" + "-"*30)
 
 def similar(this_user ):
-    this_user_likes = set(interaction[this_user])
+    this_user_likes = set(interactions[this_user])
     similaries = {}
-    for other_user,other_like in interaction.items():
+    for other_user,other_like in interactions.items():
         if this_user != other_user:
             other_like = set(other_like)
             common_post = this_user_likes.intersection(other_like)
