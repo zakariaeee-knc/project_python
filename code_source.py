@@ -114,4 +114,5 @@ def suggest(similar_users):
         else:
     print(sug_post)
 suggest(similar_users)
+print()
             
