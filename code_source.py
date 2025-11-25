@@ -101,7 +101,12 @@ for user,info in similar_user1.items():
 def suggestion(this_user):
     similars = similar(this_user)
     maxs = {}
-    for x,y in similars.values().items():
+    maxscore=0
+    for x in similars.values():
+        if maxscore < x['score']:
+            maxscore = x['score'] 
+
+
         
 
 
