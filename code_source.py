@@ -1,3 +1,15 @@
+import mysql.connector
+
+db = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="password",     # change me
+    database="instagram_db"  # change me
+)
+
+cursor = db.cursor()
+
+
 print("-"*30 + "STEP 1 :creating data" + "-"*30)
 
 users = ["user1","user2","user3","user4","user5","user6","user7"]
