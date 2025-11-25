@@ -62,7 +62,6 @@ def get_interaction_matrix():
 users = get_all_users()
 posts = get_all_posts()
 interactions = get_interaction_matrix()
-print(interactions)
 
 print("📊The availbale users :")
 for user in users:
@@ -92,7 +91,27 @@ def similar(this_user ):
                     }
     return similaries
 similar_user1 = similar("user1")
+
 for user,info in similar_user1.items():
     print(f"  {user}:")
     print(f"    Similarity score: {info['score']}")
     print(f"    Both liked: {', '.join(info['common_posts'])}")
+
+def get_sim_users(similar_user1):
+    max_ = max(item['score'] for item in similar_user1.values())
+    max_users = [user for user, item in similar_user1.items() 
+                 if item['score'] == max_]
+    return max_users
+similar_users = get_sim_users(similar_user1)
+
+def suggest(similar_users):
+    sug_post = []
+    for user in similar_users:
+        if len(similar_users) > 1:
+            for user_,inf in interactions.items():
+                if user == user_:
+                    sug_post.append(inf)
+        else:
+    print(sug_post)
+suggest(similar_users)
+            
