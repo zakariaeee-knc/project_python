@@ -110,3 +110,12 @@ def suggestion(this_user):
         
 
 
+
+
+def suggestion(this_user):
+    similars = similar(this_user)
+    maxs = {}
+    for x,y in similars.values().items():
+        
+
+
