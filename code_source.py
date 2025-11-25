@@ -4,13 +4,11 @@ import pandas as pd
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="2929",     # change me
-    database="instagrame_data"  # change me
+    password="2929",     
+    database="instagrame_data"
 )
 
 cursor = db.cursor()
-
-
 
 
 print("-"*30 + "STEP 1 :creating data" + "-"*30)
