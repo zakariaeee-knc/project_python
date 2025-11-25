@@ -1,3 +1,5 @@
+import mysql.connector
+
 print("-"*30 + "STEP 1 :creating data" + "-"*30)
 
 users = ["user1","user2","user3","user4","user5","user6","user7"]
@@ -66,3 +68,26 @@ def suggest(similar_users):
                     sug_post.append(inf)
     print(sug_post)
 suggest(similar_users)
+
+try:
+    connection = mysql.connector.connect(
+        host='https://192.168.1.101',  # Your main PC's IP address
+        user='remote_user',
+        password='2929',
+        database='instagrame_data',
+        port=3306
+    )
+    
+    if connection.is_connected():
+        print("✓ Successfully connected from remote PC!")
+        
+        # Test query
+        cursor = connection.cursor()
+        cursor.execute("SELECT DATABASE()")
+        db_name = cursor.fetchone()
+        print(f"Connected to database: {db_name[0]}")
+        
+    connection.close()
+    
+except Exception as e:
+    print(f"Connection failed: {e}")
