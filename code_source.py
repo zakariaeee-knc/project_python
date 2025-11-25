@@ -1,6 +1,6 @@
 print("-"*30 + "STEP 1 :creating data" + "-"*30)
 
-users = ["user1","user2","user3","user4","user4","user5","user6","user7"]
+users = ["user1","user2","user3","user4","user5","user6","user7"]
 posts = ["post1","post2","post3","post4","post5","post6","post7","post8","post9"]
 interaction = {
     "user1" : ["post1","post3","post9","post6"],
