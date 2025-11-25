@@ -3,11 +3,13 @@ import mysql.connector
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="password",     # change me
-    database="instagram_db"  # change me
+    password="2929",     # change me
+    database="instagrame_data"  # change me
 )
 
 cursor = db.cursor()
+
+
 
 
 print("-"*30 + "STEP 1 :creating data" + "-"*30)
@@ -23,6 +25,10 @@ interaction = {
     "user6" : ["post2","post3","post5","post6"],
     "user7" : ["post3","post9","post2","post8"]
     }
+
+for u in users:
+    cursor.execute("INSERT IGNORE INTO users(username) VALUES (%s)", (u,))
+db.commit()
 
 print("📊The availbale users :")
 for user in users:
