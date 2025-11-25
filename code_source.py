@@ -111,8 +111,6 @@ def suggest(similar_users):
             for user_,inf in interactions.items():
                 if user == user_:
                     sug_post.append(inf)
-        else:
     print(sug_post)
 suggest(similar_users)
-print()
             
