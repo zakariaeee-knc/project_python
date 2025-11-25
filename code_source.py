@@ -96,3 +96,12 @@ for user,info in similar_user1.items():
     print(f"  {user}:")
     print(f"    Similarity score: {info['score']}")
     print(f"    Both liked: {', '.join(info['common_posts'])}")
+
+
+def suggestion(this_user):
+    similars = similar(this_user)
+    maxs = {}
+    for x,y in similars.values().items():
+        
+
+
