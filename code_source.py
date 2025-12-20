@@ -111,6 +111,7 @@ def suggest(similar_users):
             for user_,inf in interactions.items():
                 if user == user_:
                     sug_post.append(inf)
+#convert list to det an s this set to list and if not exist in
     print(sug_post)
 suggest(similar_users)
             
