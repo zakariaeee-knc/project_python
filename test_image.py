@@ -13,5 +13,5 @@ draw.text((50, 180), "MONTAGNE", fill='white')
 draw.text((80, 220), "ALPES", fill='white')
 
 # ✅ SAUVEGARDE MAINTENANT FONCTIONNE
-img.save('images/montagne_alpes.jpg', 'JPEG', quality=95)
+img.save('images/code_python.jpg', 'JPEG', quality=95)
 print("✅ images/montagne_alpes.jpg sauvée !")
